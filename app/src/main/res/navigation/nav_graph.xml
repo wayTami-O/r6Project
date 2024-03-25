@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.r6project.screens.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/random"
+        android:name="com.example.r6project.screens.RandomeFragment"
+        android:label="fragment_randome"
+        tools:layout="@layout/fragment_randome" />
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.example.r6project.screens.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_shop_to_gunFragment"
+            app:destination="@id/gunFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gunFragment"
+        android:name="com.example.r6project.screens.GunFragment"
+        android:label="fragment_gun"
+        tools:layout="@layout/fragment_gun" >
+        <action
+            android:id="@+id/action_gunFragment_to_shop"
+            app:destination="@id/shop" />
+    </fragment>
+</navigation>
